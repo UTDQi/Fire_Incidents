@@ -156,7 +156,7 @@ ggplot(top_fire_causes, aes(x = reorder(Possible_Cause, -Count), y = Count)) +
 
 In this section, we use two figures that are from 23449 observations and identify the average dollar loss and causality of each cause of fire. The result provide us with understanding that in what way each type of fire are dangerous: some are more risky to human and some damages the property more.
 
-From (@fig-cause-compare-dollar) and (@fig-cause-compare-casualties),we see that among the top five causes of fires we identified,  each of them are substantially different in the damage they create.
+From @fig-cause-compare-dollar and @fig-cause-compare-casualties,we see that among the top five causes of fires we identified,  each of them are substantially different in the damage they create.
 Unattended ignition source is the most dangerous in causing death, but on average cause relatively less damage to properties. This suggests that causalities and property damage are different in nature and have to be treated differently. This observation also captures the nature of unattended unattended ignition sources, which often catch individuals off-guard, leading to a higher risk. 
 The vast difference also highlights the importance of identifying the cause of fire, which may help us lower potential  property damage. And help us in understanding how to treat the fire.
 The mean dollar loss for all causes of fire is 38,105.88, while the mean dollar loss for undetermined causes is significantly higher at 63,034. This indicates that fires of undetermined origin often result in more severe damage, possibly due to delayed detection and complex fire behavior. Undetermined fires are more likely to involve unusual circumstances, complicating both firefighting efforts and post-incident analysis. Understanding these patterns could be crucial for improving firefighting strategies.
@@ -200,32 +200,32 @@ ggplot(top_fire_causes, aes(x = reorder(Possible_Cause, -Count), y = Avg_Dollar_
 ggplot(top_fire_causes, aes(x = reorder(Possible_Cause, -Count), y = Avg_Civilian_Casualties)) +
   geom_bar(stat = "identity", fill = "orange", width = 0.6) +  # Adjust bar width
   geom_text(aes(label = round(Avg_Civilian_Casualties, 3)), size = 4, color = "black") +  # Add average casualties labels
-  theme_minimal(base_size = 15) +  # Increase base font size for readability
+  theme_minimal(base_size = 11) +  # Increase base font size for readability
   labs(title = "Average Civilian Casualties for Top 5 Causes",
        x = "Possible Cause",
        y = "Average Casualties") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 6),  # Rotate x-axis labels
-        axis.text.y = element_text(size = 6),  # Increase y-axis text size
+        axis.text.y = element_text(size = 5),  # Increase y-axis text size
         plot.margin = margin(t = 20, r = 20, b = 20, l = 20),  # Add margins
         panel.grid.major.x = element_blank())  # Remove grid lines
 ```
 \newpage
+
 ## Number of responding personnel
 
   In this section, we attempts to identify the relationship between the damage of the fire and number of responding personnel.
 
-  (@fig-personnel-compare-casualties) is created from 25769 relevant observations, it draws out the relationship between number of responding personnel and civilian casualties. We can see as the number of personnel increases, the casualties increase, this behavior is expected since we would expect a more damaging fire to receive more attention. However, the average casualties reaches a peak when the personnel responding reaches 80-90, and decreases afterward. 
+@fig-personcomparewithcasualties created from 25769 relevant observations, it draws out the relationship between number of responding personnel and civilian casualties. We can see as the number of personnel increases, the casualties increase, this behavior is expected since we would expect a more damaging fire to receive more attention. However, the average casualties reaches a peak when the personnel responding reaches 80-90, and decreases afterward. 
 
   It is possible that as number of personnel increases beyond 90, their organization becomes more effective.Or that exceeding 90 personnel allows them to use some of the highly effective apparatus. Our result suggest it may be worth looking into the incidents where more than 90 personnel responded, and find what makes them more effective.
 
 ```{r}
-#| label: fig-personnel-compare-casualties
+#| label: fig-personcomparewithcasualties
 #| fig-cap: Compare responding personnel with civilian casualties
 #| include: true
 #| echo: false
 #| warning: false
 #| message: false
-#| console: false
 
 # 25769 observations
 # Create bins for Number of Responding Personnel (0-10, 11-20, etc.)
@@ -253,19 +253,18 @@ ggplot(analysis_data_personnel_casualties_hist, aes(x = Personnel_Bin, y = Avera
   theme(axis.text.x = element_blank())
 ```
 
-(@fig-personnel-compare-dollar-loss) is created from 23449 relevant observations, it draws out the relationship between number of responding personnel and dollar loss. We see that the damage of fire increases as number of personnel increase without exceptions. Which is our expected behavior and did not privide much insight comparing to (@fig-personnel-compare-casualties). 
-
-
+@fig-personcomparewithdollarloss is created from 23449 relevant observations, it draws out the relationship between number of responding personnel and dollar loss. We see that the damage of fire increases as number of personnel increase without exceptions. Which is our expected behavior and did not provide much insight comparing to @fig-personcomparewithcasualties. 
 
 
 
 ```{r}
-#| label: fig-personnel-compare-dollar-loss
-#| fig-cap: Compare dollar loss with civilian casualties
+#| label: fig-personcomparewithdollarloss
+#| fig-cap: Compare responding personnel with dollar loss
 #| include: true
 #| echo: false
 #| warning: false
 #| message: false
+
 
 # 23449 observations
 # Create bins for Number of Responding Personnel (0-10, 11-20, etc.)
