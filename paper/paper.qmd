@@ -1,12 +1,11 @@
 ---
-title: "My title"
-subtitle: "My subtitle if needed"
+title: "The Causes of Damage in Toronto Fire Incidents"
 author: 
   - David Qi
-thanks: "Code and data are available at: https://github.com/UTDQi/starter_folder"
+thanks: "Code and data are available at: https://github.com/UTDQi/Fire_Incidents"
 date: today
 date-format: long
-abstract: "This paper discusses some basic findings around the monetary and lives loss in Toronto fire incidents. By using data from open data Toronto and choosing the relevant entries, we have identified possible factors that influences monetary and lives loss in fire incidents. "
+abstract: "This paper discusses some basic findings around the monetary and lives loss in Toronto fire incidents. By using data from open data Toronto and choosing the relevant entries, we have identified possible factors that influences monetary and lives loss in fire incidents. We identified unattended ignition sources as a significant risk factor for civilian casualties, highlighting the need for public awareness campaigns to educate communities about these potential hazards and noted that fires with undetermined causes resulted in greater property loss. Interestingly, we observed that increasing the number of responding personnel beyond 90 led to a reduction in civilian casualties, which contrasts with our initial expectations."
 format: pdf
 number-sections: true
 bibliography: references.bib
@@ -162,6 +161,8 @@ Unattended ignition source is the most dangerous in causing death, but on averag
 The vast difference also highlights the importance of identifying the cause of fire, which may help us lower potential  property damage. And help us in understanding how to treat the fire.
 The mean dollar loss for all causes of fire is 38,105.88, while the mean dollar loss for undetermined causes is significantly higher at 63,034. This indicates that fires of undetermined origin often result in more severe damage, possibly due to delayed detection and complex fire behavior. Undetermined fires are more likely to involve unusual circumstances, complicating both firefighting efforts and post-incident analysis. Understanding these patterns could be crucial for improving firefighting strategies.
 
+It's important to note that a relatively low average damage does not imply that a fire cause is insignificant. For example, improperly discarded ignition sources may be relatively less damaging according to the figures. But it is the second most frequent single cause of fires Incidents. This category has contributed to over $20 million in losses and resulted in more than 110 civilian casualties. Such statistics indicates the need for proactive measures against seemingly less damaging causes, such as public education campaign or fines for improperly discarded cigarette. As these fire also are severe threats for public safety. 
+
 ```{r}
 #| label: fig-cause-compare-dollar
 #| fig-cap: Compare cause with dollar loss 
@@ -208,7 +209,7 @@ ggplot(top_fire_causes, aes(x = reorder(Possible_Cause, -Count), y = Avg_Civilia
         plot.margin = margin(t = 20, r = 20, b = 20, l = 20),  # Add margins
         panel.grid.major.x = element_blank())  # Remove grid lines
 ```
-
+\newpage
 ## Number of responding personnel
 
   In this section, we attempts to identify the relationship between the damage of the fire and number of responding personnel.
@@ -303,6 +304,8 @@ ggplot(analysis_data_personnel_dollarloss_hist, aes(x = Personnel_Bin, y = Avera
 ## Number of responding personnel
 
   The number of responding personnel, such as firefighters and emergency medical teams, plays a critical role in determining the outcomes of fire incidents involving casualties and property damage. From our analysis, we observed an unexpected decline in the number of casualties when the number of responding personnel exceeds 90, highlighting a key area for further study. Since the fire incident site involves complex decision-making and coordination, it is crucial to avoid both overstaffing and understaffing in order to maintain an effective and manageable response team.
+  
+  Our study have shown that increasing the number of responding personnel doesn't substantially decrease property loss as the effect it has on civilian causalities. While we observed that a higher number of personnel reduces civilian casualties, the same effect is not observed in property loss. This distinction suggests that the effectiveness of firefighting operations may be more closely related to the effectiveness of each person, the ability of each person at sight, rather than number of person present. Future studies should explore the underlying reasons for this difference in relationship.
 
 ## Weaknesses and next steps{#next-step}
 
