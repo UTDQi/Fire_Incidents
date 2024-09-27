@@ -17,7 +17,3 @@ The repo is structured as:
 ## Statement on LLM usage
 
 Aspects of the code were written with the help of Chatgpt3.5. The title were written with the help of ChatGPT3.5. The entire chat history is available in inputs/llms/usage.txt.
-
-## Acknowledgments
-
-I appreciate your time in reviewing this paper and would be grateful for any feedback or suggestions you may have.
