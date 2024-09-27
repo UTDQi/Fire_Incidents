@@ -1,5 +1,5 @@
 ---
-title: "The Causes of Damage in Toronto Fire Incidents"
+title: "Fire Damage in Toronto: A Study in Contributing Factors"
 author: 
   - David Qi
 thanks: "Code and data are available at: https://github.com/UTDQi/Fire_Incidents"
