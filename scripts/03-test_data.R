@@ -16,8 +16,8 @@ library(tidyverse)
 data <- read_csv("data/raw_data/simulated.csv")
 
 # Test2: for negative numbers
-flag1 = data$dollar_loss |> min() <= 0
-flag2 = data$number_of_responding_personnel |> min() <= 0
+flag1 = data$dollar_loss |> min() < 0
+flag2 = data$number_of_responding_personnel |> min() < 0
 
 if (flag1 | flag2) {
   if(flag1){
