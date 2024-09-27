@@ -31,6 +31,6 @@ write_csv(data, "data/raw_data/raw_data.csv")
 
 
 #### Save data ####
-write_csv(the_raw_data, "inputs/data/fire_incidents_data_raw.csv") 
+write_csv(data, "data/raw_data/fire_incidents_data_raw.csv") 
 
          
