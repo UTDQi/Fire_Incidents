@@ -16,10 +16,4 @@ The repo is structured as:
 
 ## Statement on LLM usage
 
-Aspects of the code were written with the help of Chatgpt3.5. The entire chat history is available in inputs/llms/usage.txt.
-
-## Some checks
-
-- [ ] Remove files that you're not using
-- [ ] Update comments in R scripts
-- [ ] Remove this checklist
+Aspects of the code were written with the help of Chatgpt3.5. The title were written with the help of ChatGPT3.5. The entire chat history is available in inputs/llms/usage.txt.
